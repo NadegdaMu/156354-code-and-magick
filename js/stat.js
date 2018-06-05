@@ -8,8 +8,8 @@ var renderCloud1 = function (ctx) {
     [250, 40, 350, -10, 450, 40],
     [450, 40, 530, -10, 600, 40],
     [600, 40, 650, 80, 600, 150],
-    [600, 150, 650, 160, 600, 280],
-    [600, 280, 550, 300, 450, 280],
+    [600, 150, 650, 250, 580, 280],
+    [580, 280, 550, 300, 450, 280],
     [450, 280, 370, 300, 300, 280],
     [300, 280, 250, 300, 100, 280],
     [100, 280, 80, 280, 100, 300],
@@ -52,7 +52,7 @@ var colorOther = function () {
   return 'rgba(0, 0, 255, ' + Math.random(250) + ')';
 };
 
-var renderGist = function (ctx, names, gistdata, gistx, gisty, widthColomn) {
+var renderGist = function (ctx, names, times, gistdata, gistx, gisty, widthColomn) {
   var bottomGist = gisty + GIST_HEIGHT;
   var offset = 20;
   var stepColomn = 50;
@@ -68,6 +68,7 @@ var renderGist = function (ctx, names, gistdata, gistx, gisty, widthColomn) {
 
     ctx.fillRect(gistx, bottomGist, widthColomn, -gistdata[i]);
     ctx.fillText(names[i], gistx, bottomGist + offset);
+    ctx.fillText(parseInt(times[i]), gistx, bottomGist - gistdata[i] - 5);
   }
 };
 
@@ -82,5 +83,5 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Ура вы победили!', 80, 60);
   ctx.fillText('Список результатов:', 80, 80);
 
-  renderGist(ctx, names, calculetGistHeight(times), 200, 100, 40);
+  renderGist(ctx, names, times, calculetGistHeight(times), 200, 100, 40);
 };
