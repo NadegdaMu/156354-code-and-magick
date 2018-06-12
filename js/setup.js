@@ -8,10 +8,10 @@ var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)'
 var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
 
 // функция возвращающая случайный индекс массива
-  var getRandomItem = function (array) {
-    var randomIndex = array[Math.floor(Math.random()*(array.length))];
-    return randomIndex;
-  };
+var getRandomItem = function (array) {
+  var randomIndex = array[Math.floor(Math.random()*(array.length))];
+  return randomIndex;
+};
 
 // функция, собирающия объекты магов из отдельных массивов со свойствами name, coatColor, eyesColor
 var generateWizards = function () {
