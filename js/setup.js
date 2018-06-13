@@ -9,7 +9,7 @@ var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
 
 // функция возвращающая случайный индекс массива
 var getRandomItem = function (array) {
-  var randomIndex = array[Math.floor(Math.random()*(array.length))];
+  var randomIndex = array[Math.floor(Math.random() * (array.length))];
   return randomIndex;
 };
 
